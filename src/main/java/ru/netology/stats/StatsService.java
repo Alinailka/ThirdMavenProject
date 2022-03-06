@@ -32,45 +32,5 @@ public class StatsService {
         }
         return sum;
     }
-
-
-//    public int averageSales(int[] sales) {
-//        int sum = 0;
-//        for (int sale : sales) {
-//            sum = sum + sale;
-//        }
-//        return sum / 12;
-//    }
-
-    public int lowAverageSales(int[] sales) {
-        int sum = 0;
-        int counter = 0;
-        for (int sale : sales) {
-            sum = sum + sale;
-        }
-        for (int sale : sales) {
-            if (sum / 12 > sale) {
-                counter++;
-            }
-        }
-        {
-            return counter;
-        }
-    }
-
-    public int highAverageSales(int[] sales) {
-        int sum = 0;
-        int counter = 0;
-        for (int sale : sales) {
-            sum = sum + sale;
-        }
-        for (int sale : sales) {
-            if (sum / 12 < sale) {
-                counter++;
-            }
-        }
-        {
-            return counter;
-        }
-    }
 }
+

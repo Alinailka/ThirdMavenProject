@@ -47,7 +47,14 @@ class StatsServiceTest {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
-        int actual = service.lowAverageSales(sales);
+        int averageSales = service.sumSales(sales) / 12;
+        int counterLow = 0;
+        for (int sale : sales) {
+            if (averageSales > sale) {
+                counterLow++;
+            }
+        }
+        int actual = counterLow;
         assertEquals(expected, actual);
     }
 
@@ -56,7 +63,14 @@ class StatsServiceTest {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 5;
-        int actual = service.highAverageSales(sales);
+        int averageSales = service.sumSales(sales) / 12;
+        int counterHigh = 0;
+        for (int sale : sales) {
+            if (averageSales < sale) {
+                counterHigh++;
+            }
+        }
+        int actual = counterHigh;
         assertEquals(expected, actual);
     }
 }
